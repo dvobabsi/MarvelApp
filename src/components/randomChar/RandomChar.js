@@ -1,9 +1,8 @@
 import { Component } from 'react';
+import MarvelService from '../../services/MarvelService';
 
 import './randomChar.scss';
-import thor from '../../resources/img/thor.jpeg';
 import mjolnir from '../../resources/img/mjolnir.png';
-import MarvelService from '../../services/MarvelService';
 
 class RandomChar extends Component {
     constructor(props) {
@@ -17,21 +16,19 @@ class RandomChar extends Component {
 
     marvelService = new MarvelService();
 
-    onChatLoaded = (char) => {
-        this.setState(char)
+    onCharLoaded = (char) => {
+        this.setState({char})
     }
 
     updateChar = () => {
         const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
-        
         this.marvelService
             .getCharacter(id)
-            .then(this.onChatLoaded)
+            .then(this.onCharLoaded)
     }
 
     render() {
         const {char: {name, description, thumbnail, homepage, wiki}} = this.state;
-
         return (
             <div className="randomchar">
                 <div className="randomchar__block">
