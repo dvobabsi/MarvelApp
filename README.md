@@ -42,7 +42,7 @@ This project was developed as part of a Udemy React course and serves as hands-o
 
 2. Install dependencies:
    ```bash
-   yarn install
+   npm install
    ```
 
 3. Create a `.env` file in the root and add your Marvel API key:
@@ -52,7 +52,7 @@ This project was developed as part of a Udemy React course and serves as hands-o
 
 4. Start the development server:
    ```bash
-   yarn start
+   npm start
    ```
 
 ---
